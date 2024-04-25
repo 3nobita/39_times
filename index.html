@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login</title>
     <style>
         @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,300);
 
@@ -129,12 +129,26 @@
 
 <body>
     <div class="login wrap">
-        <input type="text" name="email" id="email" placeholder="Email"
-            pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$" />
+        <input type="text" name="email" id="email" placeholder="Username" />
         <input type="password" name="password" id="password" placeholder="Password" />
         <input type="button" value="Help!" />
-        <input type="submit" value="Log in" />
+        <input type="submit" value="Log in" id="loginButton" />
     </div>
+    <script>
+        document.getElementById('loginButton').addEventListener('click', function () {
+            var username = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+
+            // Basic validation
+            if ((username === '39' && password === '123') || (username === 'pussu' && password === '123')) {
+                // Redirect to index.html
+                window.location.href = 'inde.html';
+            } else {
+                // Show error message
+                alert('Invalid username or password!');
+            }
+        });
+    </script>
 </body>
 
 </html>
